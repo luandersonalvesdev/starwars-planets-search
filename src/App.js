@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './App.css';
+import Table from './components/Table';
+import { PlanetsContext } from './context/PlanetsProvider';
 
 function App() {
   return (
-    <span>Hello, App!</span>
+    <Table />
   );
 }
 
