@@ -5,9 +5,10 @@ import useFetchPlanets from '../hooks/useFetchPlanets';
 export const PlanetsContext = createContext();
 
 export default function PlanetsProvider({ children }) {
-  const dataPlanets = useFetchPlanets();
+  const values = useFetchPlanets();
+
   return (
-    <PlanetsContext.Provider value={ dataPlanets }>
+    <PlanetsContext.Provider value={ values }>
       { children }
     </PlanetsContext.Provider>
   );

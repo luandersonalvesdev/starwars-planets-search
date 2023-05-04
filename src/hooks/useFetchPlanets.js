@@ -2,6 +2,7 @@ import { useState, useMemo, useCallback, useEffect } from 'react';
 
 export default function useFetchPlanets() {
   const [dataPlanets, setDataPlanets] = useState([{}]);
+  const [dataPlanetsSort, setDataPlanetsSort] = useState([{}]);
   const [msgError, setMsgError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
@@ -20,6 +21,7 @@ export default function useFetchPlanets() {
         return planet;
       });
       setDataPlanets(results);
+      setDataPlanetsSort(results);
     } catch (error) {
       setMsgError(error.message);
     } finally {
@@ -32,8 +34,15 @@ export default function useFetchPlanets() {
   }, [fetchPlanets]);
 
   const values = useMemo(() => ({
-    dataPlanets, setDataPlanets, msgError, setMsgError, isLoading, setIsLoading,
-  }), [dataPlanets, msgError, isLoading]);
+    dataPlanets,
+    setDataPlanets,
+    msgError,
+    setMsgError,
+    isLoading,
+    setIsLoading,
+    dataPlanetsSort,
+    setDataPlanetsSort,
+  }), [dataPlanets, msgError, isLoading, dataPlanetsSort]);
 
   return values;
 }

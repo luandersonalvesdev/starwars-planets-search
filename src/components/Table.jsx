@@ -4,6 +4,7 @@ import FormFilterName from './FormFilterName';
 import FormFilterMult from './FormFilterMult';
 import { FilteredContext } from '../context/FilteredProvider';
 import { MultipleFilterContext } from '../context/MultipleFilterProvider';
+import { OrderContext } from '../context/OrderProvider';
 
 function fComparison(comparison, value, column, planet) {
   switch (comparison) {
@@ -20,9 +21,11 @@ export default function Table() {
   const { dataPlanets, isLoading, msgError } = useContext(PlanetsContext);
   const { nameInput } = useContext(FilteredContext);
   const { allFilters } = useContext(MultipleFilterContext);
+  const { isRaffle } = useContext(OrderContext);
 
   const tHeaders = Object.keys(dataPlanets[0]);
 
+  console.log(isRaffle);
   return (
     isLoading
       ? <p>loading</p>
@@ -56,7 +59,14 @@ export default function Table() {
                           const vPlanets = Object.values(planet);
                           return (
                             <tr key={ planet.name }>
-                              {vPlanets.map((value) => <td key={ value }>{value}</td>)}
+                              {vPlanets.map((value, ind) => (
+                                <td
+                                  data-testid={ ind ? '' : 'planet-name' }
+                                  key={ value }
+                                >
+                                  {value}
+                                </td>
+                              ))}
                             </tr>
                           );
                         })
