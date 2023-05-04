@@ -1,12 +1,28 @@
 import { useContext } from 'react';
 import { PlanetsContext } from '../context/PlanetsProvider';
 import FormFilterName from './FormFilterName';
+import FormFilterMult from './FormFilterMult';
 import { FilteredContext } from '../context/FilteredProvider';
+import { MultipleFilterContext } from '../context/MultipleFilterProvider';
+
+function fComparison(comparison, value, column, planet) {
+  switch (comparison) {
+  case 'maior que':
+    return Number(planet[column]) > Number(value);
+  case 'menor que':
+    return Number(planet[column]) < Number(value);
+  default:
+    return Number(planet[column]) === Number(value);
+  }
+}
 
 export default function Table() {
   const { dataPlanets, isLoading, msgError } = useContext(PlanetsContext);
   const { nameInput } = useContext(FilteredContext);
+  const { allFilters } = useContext(MultipleFilterContext);
+
   const tHeaders = Object.keys(dataPlanets[0]);
+
   return (
     isLoading
       ? <p>loading</p>
@@ -17,6 +33,7 @@ export default function Table() {
             : (
               <div>
                 <FormFilterName />
+                <FormFilterMult />
                 <table>
                   <thead>
                     <tr>
@@ -25,7 +42,16 @@ export default function Table() {
                   </thead>
                   <tbody>
                     {
-                      dataPlanets.filter(({ name }) => name.includes(nameInput))
+                      dataPlanets
+                        .filter(({ name }) => name.includes(nameInput))
+                        .filter((planet) => {
+                          const some = allFilters
+                            .some(({ comparison, value, column }) => {
+                              const res = fComparison(comparison, value, column, planet);
+                              return !res;
+                            });
+                          return !some;
+                        })
                         .map((planet) => {
                           const vPlanets = Object.values(planet);
                           return (
