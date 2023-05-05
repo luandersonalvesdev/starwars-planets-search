@@ -25,7 +25,6 @@ export default function Table() {
 
   const tHeaders = Object.keys(dataPlanets[0]);
 
-  console.log(isRaffle);
   return (
     isLoading
       ? <p>loading</p>
@@ -73,6 +72,7 @@ export default function Table() {
                     }
                   </tbody>
                 </table>
+                {isRaffle}
               </div>
             )
         )

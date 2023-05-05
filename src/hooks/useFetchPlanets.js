@@ -6,25 +6,23 @@ export default function useFetchPlanets() {
   const [isLoading, setIsLoading] = useState(false);
 
   const fetchPlanets = useCallback(async () => {
-    try {
-      setIsLoading(true);
-      const response = await fetch('https://swapi.dev/api/planets');
+    setIsLoading(true);
+    const response = await fetch('https://swapi.dev/api/planets');
+    console.log(response);
 
-      if (!response.ok) {
-        throw new Error('Falha na busca, tente novamente mais tarde');
-      }
-
-      const { results } = await response.json();
-      results.map((planet) => {
-        delete planet.residents;
-        return planet;
-      });
-      setDataPlanets(results);
-    } catch (error) {
-      setMsgError(error.message);
-    } finally {
+    if (!response.ok) {
+      setMsgError('Falha na busca, tente novamente mais tarde');
       setIsLoading(false);
+      return;
     }
+
+    const { results } = await response.json();
+    results.map((planet) => {
+      delete planet.residents;
+      return planet;
+    });
+    setDataPlanets(results);
+    setIsLoading(false);
   }, []);
 
   useEffect(() => {
