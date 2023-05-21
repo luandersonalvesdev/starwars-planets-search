@@ -1,10 +1,31 @@
-# :construction: README em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto.
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+># Star Wars Planets Search
+
+## Projeto completo! (Estilização em construção)
+
+![preview](./src/assets/github/preview.png)
+
+## Sobre o projeto
+        Este projeto foi desenvolvido no módulo de front-end da Trybe, na data 12/05/2023,
+        onde eu consegui colocar em prática os meus aprendizados até então.
+        O projeto é uma tabela dos planetas do filme Star Wars onde o usuário além de ter
+        várias informoções, ele pode filtrar por diversas coisas, como, população,
+        diâmetro, entre outros. Além de também ordenar por ascendente ou descendente.
+         
+
+># 🔗 [Acesse clicando aqui!](https://luandersonalvesdev.github.io/trybewallet/#/)
+
+## 👨‍💻 APRENDIZADO
+- Componentes funcionais.
+- Uso de Hooks
+- Uso do Context API.
+- Filtros.
+- Testes com React Testing Library.
+
+## 🛠️ TECNOLOGIAS USADAS 
+- React
+- Context API
+- React Testing Library
+
+## CONTATO
+
+https://linkedin.com/in/luandersonalvesdev
