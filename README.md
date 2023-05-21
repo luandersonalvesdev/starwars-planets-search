@@ -12,11 +12,7 @@
         diâmetro, entre outros. Além de também ordenar por ascendente ou descendente.
          
 
-<<<<<<< HEAD
-># 🔗 [Acesse clicando aqui!](https://luandersonalvesdev.github.io/starwars-planets-search/)
-=======
-># 🔗 [Acesse clicando aqui!](https://luandersonalvesdev.github.io/trybewallet/#/](https://luandersonalvesdev.github.io/starwars-planets-search/)
->>>>>>> 4299b00bb002e2ae8ce0a61bb45f829a716ea3b6
+# 🔗 [Acesse clicando aqui!](https://luandersonalvesdev.github.io/starwars-planets-search/)
 
 ## 👨‍💻 APRENDIZADO
 - Componentes funcionais.
