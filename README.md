@@ -12,7 +12,7 @@
         diâmetro, entre outros. Além de também ordenar por ascendente ou descendente.
          
 
-># 🔗 [Acesse clicando aqui!](https://luandersonalvesdev.github.io/trybewallet/#/)
+># 🔗 [Acesse clicando aqui!](https://luandersonalvesdev.github.io/starwars-planets-search/)
 
 ## 👨‍💻 APRENDIZADO
 - Componentes funcionais.
