@@ -5,7 +5,7 @@
 ![preview](./src/assets/github/preview.png)
 
 ## Sobre o projeto
-        Este projeto foi desenvolvido no módulo de front-end da Trybe, na data 12/05/2023,
+        Este projeto foi desenvolvido no módulo de front-end da Trybe, na data 04/05/2023,
         onde eu consegui colocar em prática os meus aprendizados até então.
         O projeto é uma tabela dos planetas do filme Star Wars onde o usuário além de ter
         várias informoções, ele pode filtrar por diversas coisas, como, população,
